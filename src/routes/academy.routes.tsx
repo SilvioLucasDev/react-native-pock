@@ -14,7 +14,7 @@ import BackArrow from '@/components/navigation/BackArrow';
 const Tab = createBottomTabNavigator();
 
 export default function AcademyRoutes() {
-  const navigation = useNavigation();
+  const { goBack } = useNavigation();
 
   return (
     <Tab.Navigator>
@@ -27,7 +27,7 @@ export default function AcademyRoutes() {
           tabBarIcon: ({ size, color }) => (
             <Ionicons name="trending-up-outline" size={size} color={color} />
           ),
-          headerLeft: () => <BackArrow onPress={navigation.goBack} />,
+          headerLeft: () => <BackArrow onPress={goBack} />,
         }}
       />
       <Tab.Screen
@@ -38,11 +38,11 @@ export default function AcademyRoutes() {
           tabBarIcon: ({ size, color }) => (
             <Ionicons name="barbell" size={size} color={color} />
           ),
-          headerLeft: () => <BackArrow onPress={navigation.goBack} />,
+          headerLeft: () => <BackArrow onPress={goBack} />,
         }}
       />
       <Tab.Screen
-        name="debit"
+        name="Debit"
         component={DebitScreen}
         options={{
           title: 'Débitos',
@@ -50,7 +50,7 @@ export default function AcademyRoutes() {
           tabBarIcon: ({ size, color }) => (
             <Ionicons name="cash" size={size} color={color} />
           ),
-          headerLeft: () => <BackArrow onPress={navigation.goBack} />,
+          headerLeft: () => <BackArrow onPress={goBack} />,
         }}
       />
     </Tab.Navigator>

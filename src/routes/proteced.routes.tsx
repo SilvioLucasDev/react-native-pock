@@ -15,14 +15,14 @@ import BackArrow from '@/components/navigation/BackArrow';
 const Stack = createNativeStackNavigator();
 
 export default function ProtectedRoutes() {
-  const navigation = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const { user } = useAuth();
 
   React.useEffect(() => {
     if (!user) {
-      navigation.navigate('Login');
+      navigate('Login');
     }
-  }, [user, navigation]);
+  }, [user, navigate]);
 
   return (
     <Stack.Navigator
@@ -39,11 +39,7 @@ export default function ProtectedRoutes() {
           headerShown: true,
           headerBackVisible: false,
           headerLeft: () => (
-            <BackArrow
-              onPress={navigation.goBack}
-              marginLeft={5}
-              paddingRight={15}
-            />
+            <BackArrow onPress={goBack} marginLeft={5} paddingRight={15} />
           ),
         }}
       />

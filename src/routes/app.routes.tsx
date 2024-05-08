@@ -13,7 +13,7 @@ import PerfilScreen from '@/screens/App/Perfil';
 const Tab = createBottomTabNavigator();
 
 export default function AppRoutes() {
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
   return (
     <Tab.Navigator initialRouteName="Home">
@@ -34,7 +34,7 @@ export default function AppRoutes() {
             <Foundation name="home" size={size} color={color} />
           ),
           headerRight: () => (
-            <Pressable onPress={() => navigation.navigate('Notification')}>
+            <Pressable onPress={() => navigate('Notification')}>
               {({ pressed }) => (
                 <Ionicons
                   name="notifications"

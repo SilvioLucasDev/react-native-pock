@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function AcademyScreen() {
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -12,7 +12,7 @@ export default function AcademyScreen() {
 
       <Button
         title="Ir para a academia Shark"
-        onPress={() => navigation.navigate('AcademyRoutes', { screen: 'Home' })}
+        onPress={() => navigate('AcademyRoutes', { screen: 'Home' })}
       />
     </View>
   );
