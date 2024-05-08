@@ -184,7 +184,7 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren) => {
 
       /** REMOVER DAQUI */
       console.log('LOAD', token, user);
-      setUser(user[0]);
+      setUser(user[1]);
       return;
       /** ATÉ DAQUI */
 
