@@ -25,6 +25,12 @@ export default function LoginScreen() {
         </Button>
       </Box>
 
+      <Box mb="$5">
+        <Button onPress={() => navigate('AppRoutes', { screen: 'Home' })}>
+          <ButtonText>Entrar sem login</ButtonText>
+        </Button>
+      </Box>
+
       <Button onPress={() => navigate('Register')}>
         <ButtonText>Registrar-se</ButtonText>
       </Button>
