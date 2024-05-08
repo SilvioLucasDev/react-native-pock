@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <GluestackUIProvider config={config}>
-      <Routes />
+      {fontsLoaded && <Routes />}
     </GluestackUIProvider>
   );
 }

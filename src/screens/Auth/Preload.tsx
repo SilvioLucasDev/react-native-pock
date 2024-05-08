@@ -6,7 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 export default function PreloadScreen() {
   const navigation = useNavigation();
 
-  navigation.navigate('Login');
+  React.useEffect(() => {
+    navigation.navigate('Login');
+  }, []);
 
   return (
     <View style={styles.container}>
