@@ -3,14 +3,14 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
-import AppRoutes from '@/routes/app.routes';
-import AcademyRoutes from '@/routes/academy.routes';
+import AppRoutes from '@/routes/protected/app';
+import AcademyRoutes from '@/routes/protected/academy';
 
 import { useAuth } from '@/context/AuthContext';
 
-import NotificationScreen from '@/screens/App/Notification';
+import NotificationScreen from '@/screens/Protected/App/Notification';
 
-import BackArrow from '@/components/navigation/BackArrow';
+import BackArrow from '@/components/Navigation/BackArrow';
 
 const Stack = createNativeStackNavigator();
 

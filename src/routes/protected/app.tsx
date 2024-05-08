@@ -6,9 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Foundation, Ionicons } from '@expo/vector-icons';
 
-import AcademyScreen from '@/screens/App/Academy';
-import HomeScreen from '@/screens/App/Home';
-import PerfilScreen from '@/screens/App/Perfil';
+import AcademyScreen from '@/screens/Protected/App/Academy';
+import HomeScreen from '@/screens/Protected/App/Home';
+import PerfilScreen from '@/screens/Protected/App/Perfil';
 
 const Tab = createBottomTabNavigator();
 

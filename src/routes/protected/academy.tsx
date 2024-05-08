@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 import { Ionicons } from '@expo/vector-icons';
 
-import EvolutionScreen from '@/screens/Academy/Evolution';
-import HomeScreen from '@/screens/Academy/Home';
-import DebitScreen from '@/screens/Academy/Debit';
+import EvolutionScreen from '@/screens/Protected/Academy/Evolution';
+import HomeScreen from '@/screens/Protected/Academy/Home';
+import DebitScreen from '@/screens/Protected/Academy/Debit';
 
-import BackArrow from '@/components/navigation/BackArrow';
+import BackArrow from '@/components/Navigation/BackArrow';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +17,7 @@ export default function AcademyRoutes() {
   const { goBack } = useNavigation();
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         name="Evolution"
         component={EvolutionScreen}
