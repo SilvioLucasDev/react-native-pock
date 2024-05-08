@@ -16,7 +16,7 @@ export default function AppRoutes() {
   const navigation = useNavigation();
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         name="Academy"
         component={AcademyScreen}
