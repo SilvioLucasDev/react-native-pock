@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,9 +19,15 @@ export default function LoginScreen() {
     <View style={styles.container}>
       <Text style={styles.text}>Tela de Login</Text>
 
-      <Button title="Logar" onPress={() => handleLogin()} />
+      <Box m="$5">
+        <Button onPress={() => handleLogin()}>
+          <ButtonText>Logar</ButtonText>
+        </Button>
+      </Box>
 
-      <Button title="Registrar-se" onPress={() => navigate('Register')} />
+      <Button onPress={() => navigate('Register')}>
+        <ButtonText>Registrar-se</ButtonText>
+      </Button>
     </View>
   );
 }

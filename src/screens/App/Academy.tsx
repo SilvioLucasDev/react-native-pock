@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -10,10 +12,11 @@ export default function AcademyScreen() {
     <View style={styles.container}>
       <Text style={styles.text}>Academy</Text>
 
-      <Button
-        title="Ir para a academia Shark"
-        onPress={() => navigate('AcademyRoutes', { screen: 'Home' })}
-      />
+      <Box m="$5">
+        <Button onPress={() => navigate('AcademyRoutes', { screen: 'Home' })}>
+          <ButtonText>Ir para a academia Shark</ButtonText>
+        </Button>
+      </Box>
     </View>
   );
 }

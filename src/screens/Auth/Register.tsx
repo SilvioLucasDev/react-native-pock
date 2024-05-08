@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
 
 import { useNavigation } from '@react-navigation/native';
+
 import { useAuth } from '@/context/AuthContext';
 
 export default function RegisterScreen() {
@@ -20,9 +23,15 @@ export default function RegisterScreen() {
     <View style={styles.container}>
       <Text style={styles.text}>Tela de Registro</Text>
 
-      <Button title="Registrar-se" onPress={() => handleRegister()} />
+      <Box m="$5">
+        <Button onPress={() => handleRegister()}>
+          <ButtonText>Registrar-se</ButtonText>
+        </Button>
+      </Box>
 
-      <Button title="Voltar para o Login" onPress={() => navigate('Login')} />
+      <Button onPress={() => navigate('Login')}>
+        <ButtonText>Voltar para o Login</ButtonText>
+      </Button>
     </View>
   );
 }

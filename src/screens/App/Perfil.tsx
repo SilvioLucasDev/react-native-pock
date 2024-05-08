@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { Button, ButtonText } from '@gluestack-ui/themed';
+import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
 
 import { useAuth } from '@/context/AuthContext';
 
@@ -16,9 +16,11 @@ export default function PerfilScreen() {
     <View style={styles.container}>
       <Text style={styles.text}>Perfil</Text>
 
-      <Button onPress={() => handleLogout()}>
-        <ButtonText>Sair</ButtonText>
-      </Button>
+      <Box m="$5">
+        <Button onPress={() => handleLogout()}>
+          <ButtonText>Sair</ButtonText>
+        </Button>
+      </Box>
     </View>
   );
 }
