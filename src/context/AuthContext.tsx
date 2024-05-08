@@ -52,6 +52,29 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren) => {
   const [error, setError] = React.useState<string | Array<any> | null>(null);
 
   const login = async (loginData: ILoginData) => {
+    /** REMOVER DAQUI */
+    const teste = {
+      id: '123',
+      name: 'Silvio Lucas',
+      email: 'silvio@hotmail.com',
+      token: 'gbhjh3wevhg4h23b34v2',
+    };
+
+    await AsyncStorage.multiSet([
+      ['@Nanicas@Tatame:token', teste.token],
+      ['@Nanicas@Tatame:user', JSON.stringify(teste)],
+    ]);
+
+    const [token, user] = await AsyncStorage.multiGet([
+      '@Nanicas@Tatame:token',
+      '@Nanicas@Tatame:user',
+    ]);
+    console.log('LOGIN', token, user);
+
+    setUser(teste);
+    return;
+    /** ATÉ DAQUI */
+
     setLoading(true);
 
     const { data, error } = useFetch<{ access_token: string }>({
@@ -72,6 +95,29 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren) => {
   };
 
   const register = async (registerData: IRegisterData) => {
+    /** REMOVER DAQUI */
+    const teste = {
+      id: '123',
+      name: 'Silvio Lucas',
+      email: 'silvio@hotmail.com',
+      token: 'gbhjh3wevhg4h23b34v2',
+    };
+
+    await AsyncStorage.multiSet([
+      ['@Nanicas@Tatame:token', teste.token],
+      ['@Nanicas@Tatame:user', JSON.stringify(teste)],
+    ]);
+
+    const [token, user] = await AsyncStorage.multiGet([
+      '@Nanicas@Tatame:token',
+      '@Nanicas@Tatame:user',
+    ]);
+    console.log('REGISTER', token, user);
+
+    setUser(teste);
+    return;
+    /** ATÉ DAQUI */
+
     setLoading(true);
 
     const { data, error } = useFetch<{ access_token: string }>({
@@ -92,6 +138,17 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren) => {
   };
 
   const logout = async () => {
+    /** REMOVER DAQUI */
+    setUser(null);
+
+    await AsyncStorage.multiRemove([
+      '@Nanicas@Tatame:token',
+      '@Nanicas@Tatame:user',
+    ]);
+
+    return;
+    /** ATÉ DAQUI */
+
     setLoading(true);
 
     const { error } = useFetch({
@@ -124,6 +181,12 @@ export const AuthContextProvider = ({ children }: React.PropsWithChildren) => {
         '@Nanicas@Tatame:token',
         '@Nanicas@Tatame:user',
       ]);
+
+      /** REMOVER DAQUI */
+      console.log('LOAD', token, user);
+      setUser(user[0]);
+      return;
+      /** ATÉ DAQUI */
 
       if (token[1] && user[1]) {
         const user = await getUserData(token[1]);
