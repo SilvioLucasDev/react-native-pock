@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
 import { GluestackUIProvider } from '@gluestack-ui/themed';
-import { config } from '@/config/theme/gluestack-ui.config';
+import { config } from '@/config/theme/gluestack';
 
 import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
 

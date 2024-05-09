@@ -1,9 +1,9 @@
 import { AnimationResolver } from '@gluestack-style/animation-resolver';
 import { MotionAnimationDriver } from '@gluestack-style/legend-motion-animation-driver';
 import { createConfig, createComponents } from '@gluestack-style/react';
-import * as componentsTheme from './components';
-
 import { config as defaultConfig } from '@gluestack-ui/config';
+
+import * as componentsTheme from '@/config/theme/gluestack/components';
 
 export const gluestackUIConfig = createConfig({
   aliases: {

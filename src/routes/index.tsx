@@ -6,13 +6,13 @@ import AuthRoutes from '@/routes/public';
 import ProtectedRoutes from '@/routes/protected';
 
 import { useAuth } from '@/context/AuthContext';
-import { navigationTheme } from '@/config/theme/navigation';
+import { config } from '@/config/theme/navigation';
 
 export default function Routes() {
   const { user } = useAuth();
 
   return (
-    <NavigationContainer theme={navigationTheme}>
+    <NavigationContainer theme={config}>
       {user ? <ProtectedRoutes /> : <AuthRoutes />}
     </NavigationContainer>
   );

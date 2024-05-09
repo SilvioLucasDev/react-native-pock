@@ -1,9 +1,9 @@
 import { DefaultTheme } from '@react-navigation/native';
-import { config } from '@/config/theme/gluestack';
+import { config as glueStackConfig } from '@/config/theme/gluestack';
 
-const primaryColor = config.tokens.colors.primary500;
+const primaryColor = glueStackConfig.tokens.colors.primary500;
 
-export const navigationTheme = {
+export const config = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
