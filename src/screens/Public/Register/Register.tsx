@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
+import { Box, Button, ButtonText, Text } from '@gluestack-ui/themed';
 
 import { useNavigation } from '@react-navigation/native';
 
 import { useAuth } from '@/context/AuthContext';
+
+import PublicLayout from '@/screens/Layouts/PublicLayout';
 
 export default function RegisterScreen() {
   const { navigate } = useNavigation();
@@ -20,7 +22,7 @@ export default function RegisterScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <PublicLayout>
       <Text style={styles.text}>Tela de Registro</Text>
 
       <Box m="$5">
@@ -32,16 +34,11 @@ export default function RegisterScreen() {
       <Button onPress={() => navigate('Login')}>
         <ButtonText>Voltar para o Login</ButtonText>
       </Button>
-    </View>
+    </PublicLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   text: {
     fontSize: 22,
   },

@@ -1,22 +1,19 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text, View } from '@gluestack-ui/themed';
+import { Text } from '@gluestack-ui/themed';
+
+import ProtectedLayout from '@/screens/Layouts/ProtectedLayout';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    <ProtectedLayout>
       <Text style={styles.text}>Home</Text>
-    </View>
+    </ProtectedLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   text: {
     fontSize: 22,
   },

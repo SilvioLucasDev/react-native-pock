@@ -1,15 +1,17 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Box, Button, ButtonText, Text, View } from '@gluestack-ui/themed';
+import { Box, Button, ButtonText, Text } from '@gluestack-ui/themed';
 
 import { useNavigation } from '@react-navigation/native';
+
+import ProtectedLayout from '@/screens/Layouts/ProtectedLayout';
 
 export default function AcademyScreen() {
   const { navigate } = useNavigation();
 
   return (
-    <View style={styles.container}>
+    <ProtectedLayout>
       <Text style={styles.text}>Academy</Text>
 
       <Box m="$5">
@@ -17,16 +19,11 @@ export default function AcademyScreen() {
           <ButtonText>Ir para a academia Shark</ButtonText>
         </Button>
       </Box>
-    </View>
+    </ProtectedLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   text: {
     fontSize: 22,
   },

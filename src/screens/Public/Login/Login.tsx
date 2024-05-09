@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import { useAuth } from '@/context/AuthContext';
 
+import PublicLayout from '@/screens/Layouts/PublicLayout';
+
 export default function LoginScreen() {
   const { navigate } = useNavigation();
   const { login } = useAuth();
@@ -16,7 +18,7 @@ export default function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <PublicLayout>
       <Text style={styles.text}>Tela de Login</Text>
 
       <Box m="$5">
@@ -34,16 +36,11 @@ export default function LoginScreen() {
       <Button onPress={() => navigate('Register')}>
         <ButtonText>Registrar-se</ButtonText>
       </Button>
-    </View>
+    </PublicLayout>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   text: {
     fontSize: 22,
   },
