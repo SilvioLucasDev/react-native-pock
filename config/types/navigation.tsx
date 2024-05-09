@@ -1,6 +1,7 @@
 export type AuthStackParamList = {
   Login: undefined;
   Register: undefined;
+  Restore: undefined;
 };
 
 export type ProtectedStackParamList = {
