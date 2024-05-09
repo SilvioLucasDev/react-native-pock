@@ -3,12 +3,13 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
+import { useAuth } from '@/context/AuthContext';
+
 import AppRoutes from '@/routes/protected/app';
 import AcademyRoutes from '@/routes/protected/academy';
 
-import { useAuth } from '@/context/AuthContext';
-
 import NotificationScreen from '@/screens/Protected/App/Notification';
+import ChooseRolesScreen from '@/screens/Protected/App/ChooseRoles';
 
 import BackArrow from '@/components/Navigation/BackArrow';
 
@@ -31,6 +32,7 @@ export default function ProtectedRoutes() {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="ChooseRoles" component={ChooseRolesScreen} />
       <Stack.Screen
         name="Notification"
         component={NotificationScreen}

@@ -5,6 +5,7 @@ export type AuthStackParamList = {
 };
 
 export type ProtectedStackParamList = {
+  ChooseRoles: undefined;
   Notification: undefined;
   AppRoutes: { screen: string };
   AcademyRoutes: { screen: string };
